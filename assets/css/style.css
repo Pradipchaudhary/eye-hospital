@@ -22,10 +22,56 @@ body {
 /* ==== Header ======= */
 
 header {
+    padding: 10px 0;
     /* background: #d5e8f6; */
-    background: #fff;
+    /* background: #fff; */
 }
 
+header .top_info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .top_info .top_info_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* min-width: 300px; */
+}
+
+
+/* header .top_info .address {
+    max-width: 400px;
+    width: 200px;
+} */
+
+header .top_info .top_info_item .icon {
+    padding: 10px;
+    color: #bababa;
+    font-size: 2.5rem;
+    margin-right: 8px;
+}
+
+header .top_info .top_info_item .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #777;
+}
+
+header .top_info .top_info_item .info .title {
+    color: #000;
+    font-weight: 600;
+}
+
+
+/* header .top_info ul li div .info span {
+    display: block;
+} */
+
+
+/* 
 .header {
     display: flex;
     align-items: center;
@@ -33,7 +79,7 @@ header {
 }
 
 
-/* Left box */
+
 
 .header .header_left {
     max-width: 300px;
@@ -55,15 +101,13 @@ header {
 }
 
 
-/* center box  */
 
 .header .header_center .imgLogo {
     background: #fff;
     max-width: 500px;
     min-width: 360px;
     text-align: center;
-    /* border-left: 4px solid #eee;
-    border-right: 4px solid #eeee; */
+
 }
 
 .header .header_center img {
@@ -72,7 +116,6 @@ header {
 }
 
 
-/* Header Right  */
 
 .header .header_right {
     width: 30%;
@@ -107,13 +150,15 @@ header {
     border-radius: 5px;
     margin-right: 10px;
 }
+ */
 
 
 /* ====== Nav ======= */
 
 #menu {
     /* background: #d5e8f6; */
-    background: #fff;
+    /* background: #fff; */
+    background: #0108f7;
 }
 
 .menu {
@@ -267,7 +312,7 @@ header {
     background: red;
     height: 680px;
     overflow: hidden;
-    margin-top: -25px;
+    /* margin-top: -25px; */
 }
 
 #hero img {
@@ -377,7 +422,7 @@ header {
     left: 0;
     width: 50px;
     height: 1px;
-    background: rgb(255, 0, 0);
+    background: #eee;
 }
 
 #about__section .quick_book h1 {
@@ -387,18 +432,95 @@ header {
 
 #about__section .quick_book p {
     margin-bottom: 30px;
+    margin-top: 20px;
 }
 
-#about__section .quick_book .select_location {
-    width: 100%;
+
+/* The container must be positioned relative: */
+
+.custom-select {
+    position: relative;
+    font-family: Arial;
 }
 
-#about__section .quick_book .select_location select {
+.custom-select select {
+    /* display: none; */
+    /*hide original SELECT element: */
     width: 85%;
-    padding: 10px 30px;
+    padding: 0.55rem 1rem;
     background: transparent;
-    border: 1px solis rgb(255, 255, 255);
+    border: 1px solid rgb(169, 169, 169);
+    border-radius: 5px;
     color: #eee;
+    background-color: rgb(0, 8, 255);
+    background-image: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.select-selected {
+    background-color: DodgerBlue;
+    padding: 1rem;
+    background: red;
+}
+
+
+/* Style the arrow inside the select element: */
+
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: rgb(144, 144, 144) transparent transparent transparent;
+}
+
+
+/* Point the arrow upwards when the select box is open (active): */
+
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+}
+
+
+/* style the items (options), including the selected item: */
+
+.select-items div,
+.select-selected {
+    color: #ffffff;
+    /* background: red; */
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(188, 188, 188, 0.1) transparent;
+    cursor: pointer;
+}
+
+
+/* Style items (options): */
+
+.select-items {
+    position: absolute;
+    background-color: DodgerBlue;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+
+/* Hide the items when the select box is closed: */
+
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+    background-color: rgba(147, 147, 147, 0.1);
 }
 
 
@@ -425,7 +547,7 @@ header {
 .service:nth-child(4)::after,
 .service:nth-child(5)::after {
     content: '';
-    height: 70%;
+    height: 60%;
     width: 1px;
     position: absolute;
     right: 0;
@@ -487,15 +609,22 @@ header {
 
 /* ===== Testimonials ====== */
 
-.testimonial-slider {
-    padding: 4.5rem;
+#testimonails {
+    padding: 6rem;
     position: relative;
     background: #000;
     color: #eee;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    z-index: 9;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
 }
 
-.testimonial-slider::after {
+#testimonails::after {
     background: url(../images/test_bg.JPG)no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
@@ -508,57 +637,101 @@ header {
     opacity: .2;
 }
 
-.testimonial-slider h4 {
+
+/* New Testimonials  */
+
+.testimonial {
+    /* margin: 0px 50px 30px; */
+    background-color: transparent;
+    color: #fff;
+    text-align: center;
+    border-left: 1px solid rgb(138, 138, 138);
+    border-right: 1px solid rgb(138, 138, 138);
+    padding: 40px 40px 40px;
     position: relative;
-    text-transform: uppercase;
-    font-size: 1rem;
-    font-weight: 400;
-    margin-bottom: 15px;
+    font-weight: 200;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
-.testimonial-slider h4::after {
-    position: absolute;
+.testimonial:before {
     content: "";
-    top: 30px;
-    left: 50%;
-    width: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
     height: 1px;
-    background: rgb(255, 0, 0);
-    transform: translateX(-50%);
+    background-color: rgb(138, 138, 138);
 }
 
-.testimonial-slider h1 {
-    font-size: 3rem;
+.testimonial:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 1px;
+    background-color: rgb(138, 138, 138);
 }
 
-.testimonial-slider h1 span {
-    color: rgb(255, 0, 0);
+.testimonial .testimonial-content {
+    margin-bottom: 30px;
+    font-size: 15px;
+    line-height: 30px;
+    font-weight: 200;
 }
 
-.testimonial-slider .blockquote {
-    font-size: 1rem;
-    color: rgb(184, 184, 184);
+.testimonial .pic {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+    border: 1px solid #0108f7;
 }
 
-.testimonial-slider .carousel-indicators button {
-    width: 10px;
-    height: 10px;
-    background-color: #dc3545;
-    border-radius: 100%;
+.testimonial .pic img {
+    width: 100%;
+    height: 100%;
 }
 
-.testimonial-slider img.testimonial-pic {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    margin: 10px;
-    object-fit: cover;
-    object-position: center center;
+.testimonial .testimonial-title {
+    display: inline-block;
 }
 
-.testimonial-slider .blockquote-footer {
-    color: #eee;
-    font-size: 1.1rem;
+.testimonial .testimonial-title a {
+    display: block;
+    color: #0108f7;
+    font-size: 1.2rem;
+    margin-bottom: 0px;
+    text-transform: Uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.testimonial .testimonial-title small {
+    font-size: 15px;
+    font-style: italic;
+    color: #919191;
+}
+
+.owl-theme .owl-controls {
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.owl-theme .owl-controls .owl-page span {
+    height: 12px !important;
+    width: 12px !important;
+    background-color: #eee !important;
+    opacity: 0.8;
+    border-radius: 0 !important;
+    transform: rotate(45deg) !important;
+}
+
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span {
+    background-color: #0108f7 !important;
 }
 
 
@@ -567,5 +740,54 @@ header {
 footer {
     width: 100%;
     height: 400px;
-    background: #334e9b;
+    background: #262f36;
+    padding: 4rem 0;
+    color: rgb(181, 181, 181);
 }
+
+footer .footer {
+    padding-right: 15px;
+}
+
+footer .footer h4 {
+    font-size: 1.6rem;
+    color: rgb(210, 210, 210);
+    margin-bottom: 25px;
+}
+
+.footer_social ul {
+    margin: 0;
+    padding: 0;
+}
+
+.footer_social ul li {
+    display: inline-block;
+    padding: 4px;
+    color: #eee;
+}
+
+.footer_social ul li a {
+    color: #eee;
+}
+
+
+/* === Copyright === */
+
+.copyright {
+    background: #262f36;
+    padding: 1rem 0;
+    color: rgb(181, 181, 181);
+    font-size: .85rem;
+    box-shadow: 2px 5px #f000;
+}
+
+
+/* ======= Meida Queries ===== */
+
+
+/* @media screen and (min-width: 480px) {
+    .header .header_left,
+    .header .header_right {
+        display: none;
+    }
+} */
